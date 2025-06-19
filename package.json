@@ -21,7 +21,9 @@
   },
   "scripts": {
     "export-icons": "npx zx ./scripts/export-icons.md && npm run fmt",
-    "build": "run-s build:*",
+    "build": "remix build",
+    "dev": "remix dev",
+    "start": "remix-serve build",
     "prebuild:tokens": "token-transformer --preserveRawValue ./styles/src/tokens.json ./styles/src/.tokens/main.json global,colors,core,main",
     "build:themes": "./scripts/build_themes.sh",
     "build:components": "tsup --dts",
@@ -101,5 +103,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
-  }
+  },
+  "main": "server.js"
 }
